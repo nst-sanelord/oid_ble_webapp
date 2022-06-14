@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BLE OID Sensor</title>
+        <h1>BLE OID Sensor</h1>
+    </head>
+    <body id="body" style="background-color:#FFD0D0">
+        <button onclick="connect()">Connect</button>
+        <button onclick="disconnect()">Disconnect</button>
+        <h2>Tx: OID command set select</h2>
+        <select id="oidCommandSelect">
+            <option value="0x0035">Position Enable</option>
+            <option value="0x0036">Position Disable</option>
+            <option value="0x0057">Enter Suspend</option>
+            <option value="0x0058">Resume From Suspend</option>
+            <option value="0x0021">Frame Rate 5</option>
+            <option value="0x0024">Frame Rate 20</option>
+            <option value="0x0025">Frame Rate 30</option>
+            <option value="0x0026">Frame Rate 40</option>
+            <option value="0x0027">Frame Rate 50</option>
+            <option value="0x0043">Auto Switch Position Enable</option>
+            <option value="0x0044">Auto Switch Position Disable</option>
+            <option value="0x0045">Auto Switch Gen Enable</option>
+            <option value="0x0046">Auto Switch Gen Disable</option>
+            <option value="0x0040">Enable Position Working Mode</option>
+            <option value="0x00B0">Disable Position Working Mode</option>
+            <option value="0x0010">Output Angle Enable</option>
+            <option value="0x0011">Output Angle Disable</option>
+        </select>
+        <button onclick="writeCmd()">Write</button>
+        <p id="oidCommand">-</p>
+        <h2>Rx: OID scanning code <button onclick="clearTx()">Clear</button></h2>
+        <p id="tx_last" style="font-family:'Courier New',Courier,monospace"></p>
+        <p ></p>
+        <p id="tx" style="font-family:'Courier New',Courier,monospace"></p>
+        <h2>Log <button onclick="clearLog()">Clear</button></h2>
+        <p id="log" style="font-family:'Courier New',Courier,monospace"></p>
+    </body>
+    <script src="web-bluetooth-oidSensor.js"></script>
+</html>
